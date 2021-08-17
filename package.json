@@ -1,0 +1,27 @@
+{
+  "name": "uritemplate-ts",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build": "yarn run clean && yarn run test && yarn run eslint && yarn run tsc",
+    "clean": "rimraf ./.nyc_output/ ./dist/ ./tsconfig.tsbuildinfo",
+    "eslint": "eslint ./",
+    "tsc": "tsc --build",
+    "test": "cross-env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' nyc --reporter=html --reporter=text mocha -r ts-node/register './test/**/*.ts'",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.4.11",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "mocha": "^9.0.3",
+    "nyc": "^15.1.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
+}

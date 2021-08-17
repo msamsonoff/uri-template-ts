@@ -1,0 +1,32 @@
+{ "root": true
+, "extends":
+  [ "eslint:recommended"
+  , "plugin:@typescript-eslint/eslint-recommended"
+  , "plugin:@typescript-eslint/recommended"
+  ]
+, "env":
+  { "browser": true
+  , "es2020": true
+  , "node": true
+  }
+, "rules":
+  { "@typescript-eslint/no-empty-interface": "error"
+  , "comma-dangle":
+    [ "error"
+    , { "arrays": "always-multiline"
+      , "objects": "always-multiline"
+      , "imports": "always-multiline"
+      , "exports": "always-multiline"
+      , "functions": "never"
+      }
+    ]
+  }
+, "parser": "@typescript-eslint/parser"
+, "plugins":
+  [ "@typescript-eslint"
+  ]
+, "ignorePatterns":
+  [ "**/dist/"
+  , "**/node_modules/"
+  ]
+}
